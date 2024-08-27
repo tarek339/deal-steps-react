@@ -14,6 +14,8 @@ import Form from "./form/Form";
 import FramerMotion from "./FramerMotion";
 import Card from "./Card";
 import Flex from "./Flex";
+import ContentHolder from "./ContentHolder";
+import FormImage from "./form/FormImage";
 
 export {
   Title,
@@ -32,4 +34,6 @@ export {
   FramerMotion,
   Card,
   Flex,
+  ContentHolder,
+  FormImage,
 };

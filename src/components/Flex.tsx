@@ -11,12 +11,14 @@ const Flex = ({
   width,
   style,
   height,
+  mt,
   onClick,
   onMouseEnter,
   onMouseLeave,
 }: IFlex) => {
   return (
     <div
+      className={`mt-${mt}`}
       style={{
         display: "flex",
         flexDirection: direction,

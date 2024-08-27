@@ -6,10 +6,6 @@ export default {
       backgroundColor: {
         main: "#f5f5f5",
       },
-      color: {
-        main: "#2d2d2d",
-        secondary: "#fff",
-      },
     },
   },
   darkMode: "class",

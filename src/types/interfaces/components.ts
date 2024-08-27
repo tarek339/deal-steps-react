@@ -1,9 +1,11 @@
 export interface ITitle {
   title: string;
+  center?: boolean;
 }
 
 export interface IText {
   text: string;
+  center?: boolean;
 }
 
 export interface IButton {
@@ -11,6 +13,7 @@ export interface IButton {
   type: "button" | "submit" | "reset" | undefined;
   rippleColor: string;
   bgColor: string;
+  color?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
@@ -42,11 +45,11 @@ export interface IFormText {
 
 export interface IForm {
   onSubmit: React.FormEventHandler<HTMLFormElement> | undefined;
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
 }
 
 export interface IFramerMotion {
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
 }
 
 export interface ICard {
@@ -57,7 +60,7 @@ export interface ICard {
 }
 
 export interface IFlex {
-  children: JSX.Element[] | JSX.Element;
+  children?: JSX.Element[] | JSX.Element;
   direction: "row" | "column" | "column-reverse" | "row-reverse";
   gap?: number;
   flexWrap?: boolean;
@@ -80,6 +83,7 @@ export interface IFlex {
   width?: number;
   height?: number;
   style?: React.CSSProperties;
+  mt?: number;
   onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
   onMouseEnter?: React.MouseEventHandler<HTMLDivElement> | undefined;
   onMouseLeave?: React.MouseEventHandler<HTMLDivElement> | undefined;
@@ -87,9 +91,30 @@ export interface IFlex {
 
 export interface IIconButton {
   icon: JSX.Element | undefined;
+  transparent?: boolean;
+  onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 export interface IICon {
   color: string;
   size: number;
+}
+
+export interface IContentHolder {
+  children?: JSX.Element | JSX.Element[];
+  mt: number;
+}
+
+export interface IModal {
+  title: string;
+  text: string;
+  buttonTitle: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  show: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface IFormImage {
+  children: JSX.Element | JSX.Element[];
+  image: string;
 }
