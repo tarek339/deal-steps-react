@@ -12,6 +12,8 @@ import LoadingSpinner from "./LoadingSpinner";
 import Footer from "./Footer";
 import Form from "./form/Form";
 import FramerMotion from "./FramerMotion";
+import Card from "./Card";
+import Flex from "./Flex";
 
 export {
   Title,
@@ -28,4 +30,6 @@ export {
   Footer,
   Form,
   FramerMotion,
+  Card,
+  Flex,
 };

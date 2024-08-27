@@ -1,8 +1,8 @@
 import { useState } from "react";
-import withRestrictions from "../hoc/withRestrictions";
-import { Button, Form, FormTitle, FramerMotion, Input } from "../components";
 import axios from "axios";
-import { useSelectors } from "../hooks";
+import { Button, Form, FormTitle, FramerMotion, Input } from "../../components";
+import withRestrictions from "../../hoc/withRestrictions";
+import { useSelectors } from "../../hooks";
 
 const ChangeUserPassword = () => {
   const { user } = useSelectors();

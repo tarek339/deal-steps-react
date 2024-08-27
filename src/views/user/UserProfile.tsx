@@ -1,8 +1,8 @@
-import { useDispatches, useSelectors } from "../hooks";
-import withRestrictions from "../hoc/withRestrictions";
-import { Button, FramerMotion } from "../components";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FramerMotion, Button } from "../../components";
+import withRestrictions from "../../hoc/withRestrictions";
+import { useSelectors, useDispatches } from "../../hooks";
 
 const UserProfile = () => {
   const { user } = useSelectors();

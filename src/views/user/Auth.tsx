@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatches } from "../hooks";
 import {
   Button,
   Checkbox,
@@ -11,7 +10,8 @@ import {
   FramerMotion,
   Input,
   Span,
-} from "../components";
+} from "../../components";
+import { useDispatches } from "../../hooks";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
