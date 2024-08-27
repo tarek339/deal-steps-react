@@ -1,4 +1,4 @@
-import ProductListing from "./ProductListing";
+import ProductListing from "./product/ProductListing";
 import Auth from "./user/Auth";
 import VerifyEmail from "./user/VerifyEmail";
 import UserProfile from "./user/UserProfile";

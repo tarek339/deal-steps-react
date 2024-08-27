@@ -10,3 +10,10 @@ export interface IUser {
   city: string;
   isVerified: boolean;
 }
+
+export interface IProduct {
+  brand: string;
+  imageUrl: string;
+  description?: string;
+  price: string;
+}

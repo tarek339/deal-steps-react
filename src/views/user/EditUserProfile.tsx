@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Button, Form, FormTitle, FramerMotion, Input } from "../components";
-import { useDispatches, useSelectors } from "../hooks";
-import withRestrictions from "../hoc/withRestrictions";
 import axios from "axios";
+import { Button, Form, FormTitle, FramerMotion, Input } from "../../components";
+import withRestrictions from "../../hoc/withRestrictions";
+import { useSelectors, useDispatches } from "../../hooks";
 
 const EditUserProfile = () => {
   const { user } = useSelectors();

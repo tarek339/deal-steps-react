@@ -1,8 +1,8 @@
 import { useState } from "react";
-import withRestrictions from "../hoc/withRestrictions";
 import axios from "axios";
-import { useSelectors } from "../hooks";
-import { FramerMotion, FormTitle, Input, Button, Form } from "../components";
+import { FramerMotion, FormTitle, Input, Button, Form } from "../../components";
+import withRestrictions from "../../hoc/withRestrictions";
+import { useSelectors } from "../../hooks";
 
 const ChangeUserEmail = () => {
   const { user } = useSelectors();
