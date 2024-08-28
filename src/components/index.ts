@@ -18,6 +18,7 @@ import ContentHolder from "./ContentHolder";
 import FormImage from "./form/FormImage";
 import CartTable from "./CartTable";
 import Pagination from "./Pagination";
+import TabBar from "./TabBar";
 
 export {
   Title,
@@ -40,4 +41,5 @@ export {
   FormImage,
   CartTable,
   Pagination,
+  TabBar,
 };
