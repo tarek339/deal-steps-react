@@ -52,7 +52,7 @@ const ProductDetails = () => {
             src={product?.imageUrl}
             alt=""
           />
-          <Flex col between p={6} height={31}>
+          <Flex col between p={6}>
             <div>
               <h5 className="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
                 {product?.shopName}
@@ -67,7 +67,7 @@ const ProductDetails = () => {
                 {product?.price} €
               </p>
             </div>
-            <Flex between wFull>
+            <Flex between wFull mt={2}>
               <Button
                 title={"back"}
                 type={"button"}
