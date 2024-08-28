@@ -8,7 +8,7 @@ const FramerMotion = ({ children }: IFramerMotion) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-    >
+      className="mb-5">
       {children}
     </motion.div>
   );

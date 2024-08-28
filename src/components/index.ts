@@ -17,6 +17,7 @@ import Flex from "./Flex";
 import ContentHolder from "./ContentHolder";
 import FormImage from "./form/FormImage";
 import CartTable from "./CartTable";
+import Pagination from "./Pagination";
 
 export {
   Title,
@@ -38,4 +39,5 @@ export {
   ContentHolder,
   FormImage,
   CartTable,
+  Pagination,
 };

@@ -13,6 +13,7 @@ const Flex = ({
   alignCenter,
   height,
   wFull,
+  width,
 }: IFlex) => {
   return (
     <div
@@ -31,6 +32,7 @@ const Flex = ({
       } `}
       style={{
         height: `${height}vh`,
+        width: `${width}px`,
       }}>
       {children}
     </div>

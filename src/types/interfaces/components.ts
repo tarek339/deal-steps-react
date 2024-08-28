@@ -4,7 +4,7 @@ export interface ITitle {
 }
 
 export interface IText {
-  text: string;
+  text: string | number;
   center?: boolean;
 }
 
@@ -74,6 +74,7 @@ export interface IFlex {
   children?: JSX.Element[] | JSX.Element;
   gap?: number;
   height?: number;
+  width?: number;
 }
 
 export interface IIconButton {
@@ -85,6 +86,7 @@ export interface IIconButton {
 export interface IICon {
   color: string;
   size: number;
+  transform?: boolean;
 }
 
 export interface IContentHolder {
@@ -109,4 +111,10 @@ export interface IFormImage {
 export interface ICartTable {
   children: JSX.Element | JSX.Element[] | undefined;
   priceData: number | undefined;
+}
+
+export interface IPagination {
+  onNext: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onPrev: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  pageNum: number | undefined;
 }

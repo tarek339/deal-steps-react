@@ -1,12 +1,32 @@
 import { useEffect, useState } from "react";
-import { ProductItem, Flex, FramerMotion } from "../../components";
+import { ProductItem, Flex, FramerMotion, Pagination } from "../../components";
 import axios from "axios";
 import { IProduct } from "../../types/interfaces/interfaces";
 import { useSelectors } from "../../hooks";
 
 const ProductListing = () => {
-  const [prodcuts, setProdcuts] = useState<IProduct[]>([]);
+  const [products, setProdcuts] = useState<IProduct[]>([]);
+  const [prevSlice, setPrevSlice] = useState(0);
+  const [slice, setSlice] = useState(10);
+  const [pageNum, setpageNum] = useState(1);
+
   const { user } = useSelectors();
+
+  const onNext = () => {
+    if (products.length - slice >= 0) {
+      setSlice((prev) => prev + 10);
+      setPrevSlice((prev) => prev + 10);
+      setpageNum((prev) => prev + 1);
+    }
+  };
+
+  const onPrev = () => {
+    if (prevSlice > 0) {
+      setSlice((prev) => prev - 10);
+      setPrevSlice((prev) => prev - 10);
+      setpageNum((prev) => prev - 1);
+    }
+  };
 
   const addToCart = async (id: string) => {
     try {
@@ -36,19 +56,22 @@ const ProductListing = () => {
 
   return (
     <FramerMotion>
-      <Flex gap={5} center wrap mt={24}>
-        {prodcuts.map((product) => {
-          return (
-            <ProductItem
-              key={product.id}
-              title={product.brand}
-              image={product.imageUrl}
-              price={product.price}
-              id={product.id}
-              onClick={() => addToCart(product.id)}
-            />
-          );
-        })}
+      <Flex col gap={5} alignCenter>
+        <Flex gap={5} center wrap mt={24}>
+          {products.slice(prevSlice, slice).map((product) => {
+            return (
+              <ProductItem
+                key={product.id}
+                title={product.brand}
+                image={product.imageUrl}
+                price={product.price}
+                id={product.id}
+                onClick={() => addToCart(product.id)}
+              />
+            );
+          })}
+        </Flex>
+        <Pagination onNext={onNext} onPrev={onPrev} pageNum={pageNum} />
       </Flex>
     </FramerMotion>
   );
