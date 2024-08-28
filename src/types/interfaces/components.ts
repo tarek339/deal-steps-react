@@ -108,5 +108,5 @@ export interface IFormImage {
 
 export interface ICartTable {
   children: JSX.Element | JSX.Element[] | undefined;
-  priceData: JSX.Element | JSX.Element[] | undefined;
+  priceData: number | undefined;
 }
