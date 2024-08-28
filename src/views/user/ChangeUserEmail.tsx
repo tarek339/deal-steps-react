@@ -39,7 +39,7 @@ const ChangeUserEmail = () => {
   };
   return (
     <FramerMotion>
-      <Flex direction={"column"} align="center" mt={24} gap={20}>
+      <Flex col alignCenter mt={24} gap={5}>
         <SubTitle title={"Edit email data"} />
         <FormImage
           image={
@@ -59,7 +59,7 @@ const ChangeUserEmail = () => {
               value={confirmEmail}
               onChange={(e) => setConfirmEmail(e.target.value)}
             />
-            <Flex direction={"row"} gap={5} justify="flex-end">
+            <Flex gap={5} end>
               <Button
                 title={"Back"}
                 type={"button"}

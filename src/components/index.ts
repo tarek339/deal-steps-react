@@ -12,10 +12,11 @@ import LoadingSpinner from "./LoadingSpinner";
 import Footer from "./Footer";
 import Form from "./form/Form";
 import FramerMotion from "./FramerMotion";
-import Card from "./Card";
+import ProductItem from "./ProductItem";
 import Flex from "./Flex";
 import ContentHolder from "./ContentHolder";
 import FormImage from "./form/FormImage";
+import CartTable from "./CartTable";
 
 export {
   Title,
@@ -32,8 +33,9 @@ export {
   Footer,
   Form,
   FramerMotion,
-  Card,
+  ProductItem,
   Flex,
   ContentHolder,
   FormImage,
+  CartTable,
 };

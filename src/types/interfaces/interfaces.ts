@@ -12,8 +12,17 @@ export interface IUser {
 }
 
 export interface IProduct {
+  id: string;
+  shopName: string;
   brand: string;
   imageUrl: string;
   description?: string;
   price: string;
+}
+
+export interface ICart {
+  id: string;
+  brand: string;
+  quantity: string;
+  totalPrice: string;
 }

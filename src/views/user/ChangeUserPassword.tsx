@@ -42,7 +42,7 @@ const ChangeUserPassword = () => {
 
   return (
     <FramerMotion>
-      <Flex direction={"column"} align="center" mt={24} gap={20}>
+      <Flex col alignCenter mt={24} gap={5}>
         <SubTitle title={"Reset Password"} />
         <FormImage
           image={
@@ -68,7 +68,7 @@ const ChangeUserPassword = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <Flex direction={"row"} gap={5} justify="flex-end">
+            <Flex gap={5} end>
               <Button
                 title={"Back"}
                 type={"button"}
