@@ -1,9 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { FramerMotion, Button, Flex, Title, SubTitle } from "../../components";
+import {
+  FramerMotion,
+  Button,
+  Flex,
+  Title,
+  SubTitle,
+  Modal,
+} from "../../components";
 import withRestrictions from "../../hoc/withRestrictions";
 import { useSelectors, useDispatches } from "../../hooks";
-import Modal from "../../components/Modal";
 import { useState } from "react";
 
 const UserProfile = () => {

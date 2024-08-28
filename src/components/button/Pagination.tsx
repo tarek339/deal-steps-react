@@ -1,8 +1,8 @@
-import { IPagination } from "../types/interfaces/components";
-import Flex from "./Flex";
-import Text from "./fonts/Text";
+import { IPagination } from "../../types/interfaces/components";
+import Flex from "../divs/Flex";
+import Text from "../fonts/Text";
+import { ArrowForward } from "../icons";
 import IconButton from "./IconButton";
-import { ArrowForward } from "./icons";
 
 const Pagination = ({ onNext, onPrev, pageNum }: IPagination) => {
   return (
