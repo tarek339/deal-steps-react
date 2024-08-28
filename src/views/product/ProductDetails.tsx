@@ -51,7 +51,7 @@ const ProductDetails = () => {
             src={product?.imageUrl}
             alt=""
           />
-          <Flex col between p={6} height={30}>
+          <Flex col between p={6} height={31}>
             <div>
               <h5 className="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
                 {product?.shopName}
