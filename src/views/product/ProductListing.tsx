@@ -1,10 +1,25 @@
 import { useEffect, useState } from "react";
-import { Card, Flex, FramerMotion } from "../../components";
+import { ProductItem, Flex, FramerMotion } from "../../components";
 import axios from "axios";
 import { IProduct } from "../../types/interfaces/interfaces";
+import { useSelectors } from "../../hooks";
 
 const ProductListing = () => {
   const [prodcuts, setProdcuts] = useState<IProduct[]>([]);
+  const { user } = useSelectors();
+
+  const addToCart = async (id: string) => {
+    try {
+      await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}${"product/add-to-cart/"}${
+          user?.id
+        }`,
+        { productId: id }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const fetchProducts = async () => {
     try {
@@ -21,14 +36,16 @@ const ProductListing = () => {
 
   return (
     <FramerMotion>
-      <Flex direction={"row"} gap={20} justify="center" flexWrap maxWidth>
-        {prodcuts.map((product, i) => {
+      <Flex gap={5} center wrap mt={24}>
+        {prodcuts.map((product) => {
           return (
-            <Card
-              key={i}
+            <ProductItem
+              key={product.id}
               title={product.brand}
               image={product.imageUrl}
               price={product.price}
+              id={product.id}
+              onClick={() => addToCart(product.id)}
             />
           );
         })}

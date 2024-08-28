@@ -1,39 +1,37 @@
 import { IFlex } from "../types/interfaces/components";
 
 const Flex = ({
-  children,
-  direction,
-  flexWrap,
-  maxWidth,
-  gap,
-  justify,
-  align,
-  width,
-  style,
-  height,
+  col,
   mt,
-  onClick,
-  onMouseEnter,
-  onMouseLeave,
+  p,
+  wrap,
+  children,
+  center,
+  between,
+  end,
+  gap,
+  alignCenter,
+  height,
+  wFull,
 }: IFlex) => {
   return (
     <div
-      className={`mt-${mt}`}
+      className={`flex ${col ? "flex-col" : "flex-row"} ${
+        wrap ? "flex-wrap" : "flex-nowrap"
+      } gap-${gap} mt-${mt} p-${p} ${
+        center
+          ? "justify-center"
+          : between
+          ? "justify-between"
+          : end
+          ? "justify-end"
+          : "justify-normal"
+      } ${alignCenter ? "items-center" : "items-start"} ${
+        wFull ? "w-full" : ""
+      } `}
       style={{
-        display: "flex",
-        flexDirection: direction,
-        flexWrap: flexWrap ? "wrap" : "nowrap",
-        maxWidth: maxWidth ? "100%" : "",
-        gap: `${gap}px`,
-        justifyContent: justify,
-        alignItems: align,
-        width: `${width}px`,
         height: `${height}vh`,
-        ...style,
-      }}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onClick={onClick}>
+      }}>
       {children}
     </div>
   );

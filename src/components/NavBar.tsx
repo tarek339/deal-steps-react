@@ -14,20 +14,27 @@ const NavBar = () => {
           active={location.pathname === "/" ? true : false}
           onClick={() => {
             navigate("/");
-          }}
-        >
+          }}>
           Products
         </TETabsItem>
 
         {user && user.isVerified && (
-          <TETabsItem
-            active={location.pathname === "/user-profile" ? true : false}
-            onClick={() => {
-              navigate("/user-profile");
-            }}
-          >
-            Profile
-          </TETabsItem>
+          <>
+            <TETabsItem
+              active={location.pathname === "/user-profile" ? true : false}
+              onClick={() => {
+                navigate("/user-profile");
+              }}>
+              Profile
+            </TETabsItem>
+            <TETabsItem
+              active={location.pathname === "/cart" ? true : false}
+              onClick={() => {
+                navigate("/cart");
+              }}>
+              Cart
+            </TETabsItem>
+          </>
         )}
 
         {user ? (
@@ -36,8 +43,7 @@ const NavBar = () => {
               navigate("/auth");
               dispatchRemoveUser();
               localStorage.removeItem("token");
-            }}
-          >
+            }}>
             Log out
           </TETabsItem>
         ) : (
@@ -45,8 +51,7 @@ const NavBar = () => {
             active={location.pathname === "/auth" ? true : false}
             onClick={() => {
               navigate("auth");
-            }}
-          >
+            }}>
             Auth
           </TETabsItem>
         )}

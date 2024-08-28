@@ -9,7 +9,7 @@ export interface IText {
 }
 
 export interface IButton {
-  title: string;
+  title: string | JSX.Element;
   type: "button" | "submit" | "reset" | undefined;
   rippleColor: string;
   bgColor: string;
@@ -57,36 +57,23 @@ export interface ICard {
   description?: string;
   image: string;
   price: string;
+  id: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 export interface IFlex {
-  children?: JSX.Element[] | JSX.Element;
-  direction: "row" | "column" | "column-reverse" | "row-reverse";
-  gap?: number;
-  flexWrap?: boolean;
-  maxWidth?: boolean;
-  justify?:
-    | "flex-start"
-    | "flex-end"
-    | "center"
-    | "space-between"
-    | "space-around"
-    | "space-evenly";
-  align?:
-    | "flex-start"
-    | "flex-end"
-    | "center"
-    | "stretch"
-    | "baseline"
-    | "initial"
-    | "inherit";
-  width?: number;
-  height?: number;
-  style?: React.CSSProperties;
+  p?: number;
   mt?: number;
-  onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
-  onMouseEnter?: React.MouseEventHandler<HTMLDivElement> | undefined;
-  onMouseLeave?: React.MouseEventHandler<HTMLDivElement> | undefined;
+  col?: boolean;
+  wrap?: boolean;
+  center?: boolean;
+  between?: boolean;
+  end?: boolean;
+  alignCenter?: boolean;
+  wFull?: boolean;
+  children?: JSX.Element[] | JSX.Element;
+  gap?: number;
+  height?: number;
 }
 
 export interface IIconButton {
@@ -117,4 +104,9 @@ export interface IModal {
 export interface IFormImage {
   children: JSX.Element | JSX.Element[];
   image: string;
+}
+
+export interface ICartTable {
+  children: JSX.Element | JSX.Element[] | undefined;
+  priceData: JSX.Element | JSX.Element[] | undefined;
 }

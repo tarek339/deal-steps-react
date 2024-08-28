@@ -50,7 +50,7 @@ const EditUserProfile = () => {
 
   return (
     <FramerMotion>
-      <Flex direction={"column"} align="center" mt={24} gap={20}>
+      <Flex col alignCenter mt={24} gap={5}>
         <SubTitle title={"Edit profile data"} />
         <FormImage
           image={
@@ -94,7 +94,7 @@ const EditUserProfile = () => {
               value={city}
               onChange={(e) => setCity(e.target.value)}
             />
-            <Flex direction={"row"} gap={5} justify="flex-end">
+            <Flex gap={5} end>
               <Button
                 title={"Back"}
                 type={"button"}

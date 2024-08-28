@@ -7,6 +7,8 @@ import {
   EditUserProfile,
   ChangeUserEmail,
   ChangeUserPassword,
+  ProductDetails,
+  ProductCart,
 } from "./views";
 import { LoadingSpinner, NavBar } from "./components";
 import { useEffect } from "react";
@@ -31,12 +33,17 @@ export default function App() {
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<ProductListing />} />
+          <Route
+            path="/product-details/:productID"
+            element={<ProductDetails />}
+          />
           <Route path="/auth" element={<Auth />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/user-profile" element={<UserProfile />} />
           <Route path="/edit-user-profile" element={<EditUserProfile />} />
           <Route path="/edit-user-email" element={<ChangeUserEmail />} />
           <Route path="/edit-user-password" element={<ChangeUserPassword />} />
+          <Route path="/cart" element={<ProductCart />} />
         </Routes>
       </AnimatePresence>
     </div>

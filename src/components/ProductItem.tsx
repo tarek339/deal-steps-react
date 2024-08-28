@@ -1,10 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import { ICard } from "../types/interfaces/components";
 import Button from "./Button";
 import Flex from "./Flex";
 import IconButton from "./IconButton";
 import { Cart } from "./icons";
 
-const Card = ({ title, description, image, price }: ICard) => {
+const ProductItem = ({
+  title,
+  description,
+  image,
+  price,
+  id,
+  onClick,
+}: ICard) => {
+  const navigate = useNavigate();
+
   return (
     <div className="block w-72 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
       <img className="rounded-t-lg" src={image} alt="" />
@@ -19,18 +29,22 @@ const Card = ({ title, description, image, price }: ICard) => {
           {price} €
         </p>
 
-        <Flex direction={"row"} justify="space-between" align="center">
+        <Flex between alignCenter>
           <Button
             title={"Details"}
             type={"button"}
             rippleColor={"light"}
             bgColor={"primary"}
+            onClick={() => navigate(`/product-details/${id}`)}
           />
-          <IconButton icon={<Cart color={"#fff"} size={20} />} />
+          <IconButton
+            icon={<Cart color={"#fff"} size={20} />}
+            onClick={onClick}
+          />
         </Flex>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default ProductItem;

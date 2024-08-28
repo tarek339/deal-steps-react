@@ -40,25 +40,25 @@ const UserProfile = () => {
         show={showModal}
         setShow={setShowModal}
       />
-      <Flex direction={"row"} justify="center" mt={24}>
-        <Flex direction={"column"} gap={20}>
+      <Flex center mt={24}>
+        <Flex col gap={5}>
           <Title title={"Profile"} />
 
-          <Flex direction={"row"} gap={5}>
+          <Flex gap={5}>
             <SubTitle title={user?.firstName!} />
             <SubTitle title={user?.lastName!} />
           </Flex>
           <SubTitle title={user?.email!} />
-          <Flex direction={"row"} gap={5}>
+          <Flex gap={5}>
             <SubTitle title={user?.street!} />
             <SubTitle title={user?.houseNumber!} />
           </Flex>
-          <Flex direction={"row"} gap={5}>
+          <Flex gap={5}>
             <SubTitle title={user?.zipCode!} />
             <SubTitle title={user?.city!} />
           </Flex>
 
-          <Flex direction={"row"} gap={20}>
+          <Flex gap={5}>
             <Button
               title={"Edit data"}
               type={"button"}
@@ -75,7 +75,7 @@ const UserProfile = () => {
             />
           </Flex>
 
-          <Flex direction={"row"} gap={20}>
+          <Flex gap={5}>
             <Button
               title={"Edit Password"}
               type={"button"}
