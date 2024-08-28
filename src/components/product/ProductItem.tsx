@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { ICard } from "../types/interfaces/components";
-import Button from "./Button";
-import Flex from "./Flex";
-import IconButton from "./IconButton";
-import { Cart } from "./icons";
+import { ICard } from "../../types/interfaces/components";
+import Flex from "../divs/Flex";
+import { Cart } from "../icons";
+import Button from "../button/Button";
+import IconButton from "../button/IconButton";
 
 const ProductItem = ({
   title,

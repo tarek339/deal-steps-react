@@ -1,10 +1,14 @@
 import axios from "axios";
 import withRestrictions from "../../hoc/withRestrictions";
 import { useEffect, useState } from "react";
-import { CartTable, ContentHolder, SubTitle } from "../../components";
+import {
+  CartTable,
+  ContentHolder,
+  IconButton,
+  SubTitle,
+} from "../../components";
 import { useSelectors } from "../../hooks";
 import { ICart } from "../../types/interfaces/interfaces";
-import IconButton from "../../components/IconButton";
 import { Delete } from "../../components/icons";
 
 const ProductCart = () => {

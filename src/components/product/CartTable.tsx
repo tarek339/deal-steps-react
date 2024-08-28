@@ -1,6 +1,6 @@
-import { ICartTable } from "../types/interfaces/components";
-import Button from "./Button";
-import Flex from "./Flex";
+import { ICartTable } from "../../types/interfaces/components";
+import Button from "../button/Button";
+import Flex from "../divs/Flex";
 
 const CartTable = ({ children, priceData }: ICartTable) => {
   return (

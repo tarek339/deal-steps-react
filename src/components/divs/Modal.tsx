@@ -6,10 +6,8 @@ import {
   TEModalBody,
   TEModalFooter,
 } from "tw-elements-react";
-import IconButton from "./IconButton";
-import { Cancel } from "./icons";
-import Button from "./Button";
-import { IModal } from "../types/interfaces/components";
+import { IModal } from "../../types/interfaces/components";
+import Button from "../button/Button";
 
 const Modal = ({
   title,
@@ -27,12 +25,6 @@ const Modal = ({
             <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
               {title}
             </h5>
-
-            <IconButton
-              onClick={() => setShow(false)}
-              transparent
-              icon={<Cancel />}
-            />
           </TEModalHeader>
 
           <TEModalBody>{text}</TEModalBody>
