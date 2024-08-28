@@ -1,12 +1,7 @@
 import axios from "axios";
 import withRestrictions from "../../hoc/withRestrictions";
 import { useEffect, useState } from "react";
-import {
-  CartTable,
-  ContentHolder,
-  IconButton,
-  SubTitle,
-} from "../../components";
+import { CartTable, ContentHolder, SubTitle } from "../../components";
 import { useSelectors } from "../../hooks";
 import { ICart } from "../../types/interfaces/interfaces";
 import { Delete } from "../../components/icons";
@@ -53,29 +48,25 @@ const ProductCart = () => {
         <CartTable
           children={cart.map((item, i) => {
             return (
-              <>
-                <tr
-                  key={item.id}
-                  className="border-b odd:bg-neutral-100 even:bg-white hover:bg-[#d5d5d5] transition-bg duration-300 cursor-pointer">
-                  <td className="whitespace-nowrap px-6 py-4 font-medium">
-                    {i + 1}
-                  </td>
-                  <td className="whitespace-nowrap px-6 py-4">{item.brand}</td>
-                  <td className="whitespace-nowrap px-6 py-4">
-                    {item.quantity}
-                  </td>
-                  <td className="whitespace-nowrap px-6 py-4">
-                    {item.totalPrice}
-                  </td>
-                  <td className="whitespace-nowrap px-6 py-4">
-                    <IconButton
-                      transparent
-                      icon={<Delete color={"red"} size={25} />}
-                      onClick={() => removeFromCart(item.id)}
-                    />
-                  </td>
-                </tr>
-              </>
+              <tr
+                key={i}
+                className="border-b odd:bg-neutral-100 even:bg-white hover:bg-[#d5d5d5] transition-bg duration-300 cursor-pointer">
+                <td className="whitespace-nowrap px-6 py-4 font-medium">
+                  {i + 1}
+                </td>
+                <td className="whitespace-nowrap px-6 py-4">{item.brand}</td>
+                <td className="whitespace-nowrap px-6 py-4">{item.quantity}</td>
+                <td className="whitespace-nowrap px-6 py-4">
+                  {item.totalPrice}
+                </td>
+                <td className="whitespace-nowrap px-6 py-4">
+                  <Delete
+                    color={"red"}
+                    size={25}
+                    onClick={() => removeFromCart(item.id)}
+                  />
+                </td>
+              </tr>
             );
           })}
           priceData={total}
