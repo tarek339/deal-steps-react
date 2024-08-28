@@ -87,6 +87,7 @@ export interface IICon {
   color: string;
   size: number;
   transform?: boolean;
+  onClick?: React.MouseEventHandler<SVGElement> | undefined;
 }
 
 export interface IContentHolder {

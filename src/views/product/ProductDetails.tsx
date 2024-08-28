@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { IProduct } from "../../types/interfaces/interfaces";
 import { Cart } from "../../components/icons";
 import { Button, Flex, FramerMotion, Span, SubTitle } from "../../components";
@@ -10,6 +10,7 @@ const ProductDetails = () => {
   const [product, setProduct] = useState<IProduct>();
   const { productID } = useParams();
   const { user } = useSelectors();
+  const navigate = useNavigate();
 
   const addToCart = async () => {
     try {
@@ -66,7 +67,14 @@ const ProductDetails = () => {
                 {product?.price} €
               </p>
             </div>
-            <Flex end wFull>
+            <Flex between wFull>
+              <Button
+                title={"back"}
+                type={"button"}
+                rippleColor={"light"}
+                bgColor={"danger"}
+                onClick={() => navigate(-1)}
+              />
               <Button
                 title={
                   <Flex gap={2}>
