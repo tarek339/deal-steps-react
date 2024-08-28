@@ -118,3 +118,10 @@ export interface IPagination {
   onPrev: React.MouseEventHandler<HTMLButtonElement> | undefined;
   pageNum: number | undefined;
 }
+
+export interface ITabBar {
+  leftTitle: string;
+  rightTitle: string;
+  onLeftClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onRightClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+}

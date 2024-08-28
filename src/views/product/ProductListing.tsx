@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
-import { ProductItem, Flex, FramerMotion, Pagination } from "../../components";
+import {
+  ProductItem,
+  Flex,
+  FramerMotion,
+  Pagination,
+  TabBar,
+} from "../../components";
 import axios from "axios";
 import { IProduct } from "../../types/interfaces/interfaces";
 import { useSelectors } from "../../hooks";
+import { useNavigate } from "react-router-dom";
 
 const ProductListing = () => {
   const [products, setProdcuts] = useState<IProduct[]>([]);
@@ -11,6 +18,7 @@ const ProductListing = () => {
   const [pageNum, setpageNum] = useState(1);
 
   const { user } = useSelectors();
+  const navigate = useNavigate();
 
   const onNext = () => {
     if (products.length - slice >= 0) {
@@ -56,8 +64,14 @@ const ProductListing = () => {
 
   return (
     <FramerMotion>
-      <Flex col gap={5} alignCenter>
-        <Flex gap={5} center wrap mt={24}>
+      <Flex col gap={5} alignCenter mt={24}>
+        <TabBar
+          leftTitle={"Low Price"}
+          rightTitle={"Most GB"}
+          onLeftClick={() => navigate("/low-price")}
+          onRightClick={() => navigate("/most-gb")}
+        />
+        <Flex gap={5} center wrap>
           {products.slice(prevSlice, slice).map((product) => {
             return (
               <ProductItem
