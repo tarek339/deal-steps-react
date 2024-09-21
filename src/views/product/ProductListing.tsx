@@ -9,7 +9,6 @@ import {
 import axios from "axios";
 import { IProduct } from "../../types/interfaces/interfaces";
 import { useSelectors } from "../../hooks";
-import { useNavigate } from "react-router-dom";
 
 const ProductListing = () => {
   const [products, setProdcuts] = useState<IProduct[]>([]);
@@ -18,7 +17,6 @@ const ProductListing = () => {
   const [pageNum, setpageNum] = useState(1);
 
   const { user } = useSelectors();
-  const navigate = useNavigate();
 
   const onNext = () => {
     if (products.length - slice >= 0) {
@@ -66,10 +64,14 @@ const ProductListing = () => {
     <FramerMotion>
       <Flex col gap={5} alignCenter mt={24}>
         <TabBar
-          leftTitle={"Low Price"}
+          leftTitle={"Apple"}
+          leftMiddleTitle={"Samsung"}
+          rightMiddleTitle={"Low price"}
           rightTitle={"Most GB"}
-          onLeftClick={() => navigate("/low-price")}
-          onRightClick={() => navigate("/most-gb")}
+          onLeftClick={undefined}
+          onRightClick={undefined}
+          onLeftMiddleClick={undefined}
+          onRightMiddleClick={undefined}
         />
         <Flex gap={5} center wrap>
           {products.slice(prevSlice, slice).map((product) => {

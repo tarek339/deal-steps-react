@@ -7,8 +7,6 @@ import ChangeUserEmail from "./user/ChangeUserEmail";
 import ChangeUserPassword from "./user/ChangeUserPassword";
 import ProductDetails from "./product/ProductDetails";
 import ProductCart from "./product/ProductCart";
-import CheapestProducts from "./product/CheapestProducts";
-import MostGB from "./product/MostGB";
 
 export {
   ProductListing,
@@ -20,6 +18,4 @@ export {
   ChangeUserPassword,
   ProductDetails,
   ProductCart,
-  CheapestProducts,
-  MostGB,
 };

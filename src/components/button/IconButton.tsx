@@ -1,5 +1,5 @@
 import { TERipple } from "tw-elements-react";
-import { IIconButton } from "../types/interfaces/components";
+import { IIconButton } from "../../types/interfaces/components";
 
 const IconButton = ({ icon, onClick }: IIconButton) => {
   return (

@@ -1,5 +1,5 @@
 import { TERipple } from "tw-elements-react";
-import { IButton } from "../types/interfaces/components";
+import { IButton } from "../../types/interfaces/components";
 
 const Button = ({
   title,

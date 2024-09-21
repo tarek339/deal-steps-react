@@ -123,6 +123,10 @@ export interface IPagination {
 export interface ITabBar {
   leftTitle: string;
   rightTitle: string;
+  rightMiddleTitle: string;
+  leftMiddleTitle: string;
   onLeftClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onLeftMiddleClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
   onRightClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onRightMiddleClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }

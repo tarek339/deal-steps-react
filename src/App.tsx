@@ -9,8 +9,6 @@ import {
   ChangeUserPassword,
   ProductDetails,
   ProductCart,
-  CheapestProducts,
-  MostGB,
 } from "./views";
 import { LoadingSpinner, NavBar } from "./components";
 import { useEffect } from "react";
@@ -35,8 +33,6 @@ export default function App() {
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<ProductListing />} />
-          <Route path="/low-price" element={<CheapestProducts />} />
-          <Route path="/most-gb" element={<MostGB />} />
           <Route
             path="/product-details/:productID"
             element={<ProductDetails />}

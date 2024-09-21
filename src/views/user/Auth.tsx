@@ -20,6 +20,7 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [isRegister, setIsRegister] = useState(false);
   const [forgotPassword, setForgotPassword] = useState(false);
+  const [message, setMessage] = useState("");
 
   const navigate = useNavigate();
   const { dispatchUser } = useDispatches();
@@ -30,6 +31,7 @@ const Auth = () => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}${
@@ -47,6 +49,9 @@ const Auth = () => {
       }
     } catch (error) {
       console.log(error);
+      if (axios.isAxiosError(error) && error.response) {
+        setMessage(error.response.data.message);
+      }
     }
   };
   return (
@@ -73,6 +78,7 @@ const Auth = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            <div>{message}</div>
             <>
               {!forgotPassword && (
                 <Input
